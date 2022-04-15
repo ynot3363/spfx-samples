@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="Footer"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="b99ce130-58f6-4147-84c6-e4d09180a357"
+        ClientSideComponentProperties="{&quot;intranetUrl&quot;:&quot;https://anthonyepoulin.sharepoint.com&quot;,&quot;footerListId&quot;:&quot;71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6&quot;}">
+    </CustomAction>
+</Elements>

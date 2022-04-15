@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://anthonyepoulin.sharepoint.com/SitePages/Home.aspx",
+      "customActions": {
+        "b99ce130-58f6-4147-84c6-e4d09180a357": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "intranelUrl": "https://anthonyepoulin.sharepoint.com",
+            "footerListId": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6"
+          }
+        }
+      }
+    },
+    "footer": {
+      "pageUrl": "https://anthonyepoulin.sharepoint.com/SitePages/Home.aspx",
+      "customActions": {
+        "b99ce130-58f6-4147-84c6-e4d09180a357": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "intranelUrl": "https://anthonyepoulin.sharepoint.com",
+            "footerListId": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Custom Footer Solution - AEP",
+    "id": "1d7fb255-6001-401f-9e52-2d9185fed778",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Anthony Poulin",
+      "websiteUrl": "https://anthonyepoulin.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Adds a custom footer section to the bottom of all modern pages."
+      },
+      "longDescription": {
+        "default": "Adds a custom footer section to the bottom of all modern pages. The links are controlled from an associated Footer Links list within the tenant. Properties can be set to specify the Site and the List where the links reside."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom footer",
+        "description": "Deploys a custom footer to modern pages",
+        "id": "b9fda583-c9da-45c2-b3ca-5286a78c80ab",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/footer.sppkg"
+  }
+}
