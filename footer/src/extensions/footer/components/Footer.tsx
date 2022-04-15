@@ -21,12 +21,13 @@ const Footer = ({ footerLinks }: IFooterProps) => {
    * Set the background color of the container based on the site theme otherwise default to blue
    */
   const backgroundColor =
-    window.__themeState__.theme.suiteBarBackground || "#0086bd";
+    window.__themeState__.theme.primaryButtonBackground || "#0086bd";
 
   /**
    * Set the link text color based on the site theme otherwise default to white
    */
-  const linkTextColor = window.__themeState__.theme.suiteBarText || "#ffffff";
+  const linkTextColor =
+    window.__themeState__.theme.primaryButtonText || "#ffffff";
 
   return (
     <div
