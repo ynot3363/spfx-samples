@@ -4,7 +4,11 @@
 
 Demonstrates how you can create a custom footer for your site and add it to the bottom of the page. **This extension will not attach it to the footer section but rather append it to the page.**
 
+Screen width > 640px:  
 ![screenshot of extension](./footerExtension.png)
+
+Screen width < 640px:  
+![screenshot of extension](./footerExtensionMobile.png)
 
 ## Used SharePoint Framework Version
 
