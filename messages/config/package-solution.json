@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Messages Solution - AEP",
+    "id": "9173dfed-08a3-49bc-ba48-9b1f69fd50e6",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Anthony Poulin",
+      "websiteUrl": "https://anthonyepoulin.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Adds a container at the top of the page to allow you place messages on all the pages"
+      },
+      "longDescription": {
+        "default": "Adds a container at the top of the page to allow you place messages on all the pages"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom messages action",
+        "description": "Deploys a custom message container to modern pages",
+        "id": "f6da1772-7727-4af5-ad74-0caa1acdaa26",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/messages.sppkg"
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="Messages"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="f35ccc1d-85aa-4dce-b11a-d68103e6dd5c"
+        ClientSideComponentProperties="{&quot;intranetUrl&quot;:&quot;https://anthonyepoulin.sharepoint.com&quot;,&quot;messageListId&quot;:&quot;a0dc5816-699f-4a14-8e1f-8b1b75207548&quot;}">
+    </CustomAction>
+</Elements>
