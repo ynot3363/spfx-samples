@@ -44,8 +44,8 @@ export default class MessagesApplicationCustomizer extends BaseApplicationCustom
      * messageContainer div that we will render our Messages into.
      */
     const container: Element = document.querySelector(
-      `div[data-automation-id="mainScrollRegionInnerContent"]`
-    ).parentElement.parentElement;
+      `div[data-automation-id="contentScrollRegion"]`
+    ).children[0];
 
     if (container) {
       this._messages = await this.getItems();
@@ -68,8 +68,8 @@ export default class MessagesApplicationCustomizer extends BaseApplicationCustom
      * reference to an old HTML element
      */
     const container: Element = document.querySelector(
-      `div[data-automation-id="mainScrollRegionInnerContent"]`
-    ).parentElement.parentElement;
+      `div[data-automation-id="contentScrollRegion"]`
+    ).children[0];
 
     if (!messageContainerElement && container && this._messages.length > 0) {
       const messageContainer: HTMLElement = document.createElement("div");
