@@ -9,7 +9,7 @@
         "b99ce130-58f6-4147-84c6-e4d09180a357": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "intranelUrl": "https://anthonyepoulin.sharepoint.com",
+            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
             "footerListId": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6"
           }
         }
@@ -21,7 +21,7 @@
         "b99ce130-58f6-4147-84c6-e4d09180a357": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "intranelUrl": "https://anthonyepoulin.sharepoint.com",
+            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
             "footerListId": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6"
           }
         }

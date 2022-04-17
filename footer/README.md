@@ -55,7 +55,7 @@ The solution depends on an associated list to hold the links for the footer. The
 
 ## Features
 
-The **footer** extension will apply a footer element to the bottom of the page by appending it to the Canvas element within SharePoint pages. This will provide the user the ability to scroll to the footer versus it being sticky at the bottom of the page.
+The **footer** extension will apply a footer element to the bottom of the page by appending it to SharePoint pages. This will provide the user the ability to scroll to the footer versus it being sticky at the bottom of the page.
 
 This extension illustrates the following concepts:
 

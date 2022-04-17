@@ -40,11 +40,11 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
     /**
-     * Looks for a specific element with class Canvas in the SharePoint page DOM to append our
+     * Looks for a specific element with id spPageCanvasContent in the SharePoint page DOM to append our
      * customFooter div that we will render our Footer into.
      */
-    const container: Element = document.getElementById(
-      "spPageCanvasContent"
+    const container: Element = document.querySelector(
+      `div[data-automation-id="mainScrollRegionInnerContent"]`
     ).parentElement;
 
     if (container) {
@@ -66,8 +66,8 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
      * page loads this is the only function that runs and if you get it once you will have a
      * reference to an old HTML element
      */
-    const container = document.getElementById(
-      "spPageCanvasContent"
+    const container = document.querySelector(
+      `div[data-automation-id="mainScrollRegionInnerContent"]`
     ).parentElement;
 
     if (!footerElement && container && this._footerItems.length > 0) {
