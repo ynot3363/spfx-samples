@@ -20,6 +20,16 @@
       "title": { "default": "Demote News Post" },
       "iconImageUrl": "../../../icons/megaphone_off.svg",
       "type": "command"
+    },
+    "PROMOTE_NEWS_POST": {
+      "title": { "default": "Promote to News Post" },
+      "iconImageUrl": "../../../icons/megaphone.svg",
+      "type": "command"
+    },
+    "UPDATE_PUBLISHING_DATE": {
+      "title": { "default": "Update the Publishing Date" },
+      "iconImageUrl": "../../../icons/calednar_edit.svg",
+      "type": "command"
     }
   }
 }
