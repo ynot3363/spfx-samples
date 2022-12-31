@@ -178,16 +178,21 @@ export default class NewsCommandSet extends BaseListViewCommandSet<INewsCommandS
     });
   }
 
-  private _renderPanelComponent(props: any) {
+  private _renderPanelComponent(props: Partial<ICustomPanelProps>) {
+    const defaultProps: ICustomPanelProps = {
+      isOpen: false,
+      items: [],
+      panelTitle: null,
+      panelDescription: null,
+      onClose: null,
+      onRefresh: null,
+      context: null,
+      command: null,
+    };
     const element: React.ReactElement<ICustomPanelProps> = React.createElement(
       CustomPanel,
       {
-        isOpen: false,
-        items: [],
-        panelTitle: null,
-        panelDescription: null,
-        onClose: null,
-        onRefresh: null,
+        ...defaultProps,
         ...props,
       }
     );

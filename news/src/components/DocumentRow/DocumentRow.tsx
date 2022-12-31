@@ -8,6 +8,7 @@ import { Icon } from "@fluentui/react";
 import { Text } from "@fluentui/react/lib/Text";
 import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
 import { Log } from "@microsoft/sp-core-library";
+import { IListItemFormUpdateValue } from "../../models/IListItemFormUpdateValue";
 
 export interface IDocumentRowProps {
   context: ListViewCommandSetContext;
@@ -29,7 +30,7 @@ export class DocumentRow extends React.Component<
   IDocumentRowProps,
   IDocumentRowState
 > {
-  constructor(props) {
+  constructor(props: IDocumentRowProps) {
     super(props);
     this.state = {
       documentState: "Pending",
@@ -39,11 +40,7 @@ export class DocumentRow extends React.Component<
     this._updateDocument.bind(this);
   }
 
-  public componentDidUpdate(
-    prevProps: Readonly<IDocumentRowProps>,
-    prevState: Readonly<IDocumentRowState>,
-    snapshot?: any
-  ): void {
+  public componentDidUpdate(prevProps: Readonly<IDocumentRowProps>): void {
     if (
       this.props.formState !== prevProps.formState &&
       this.props.formState === "Submitting"
@@ -79,7 +76,7 @@ export class DocumentRow extends React.Component<
                 ? "ErrorBadge"
                 : documentState === "Submitting"
                 ? "Refresh"
-                : "TextDocument"
+                : "PageList"
             }
           />
           <Text
@@ -98,7 +95,7 @@ export class DocumentRow extends React.Component<
             </Text>
           </div>
         )}
-        <div className={styles.horizontalRule}></div>
+        <div className={styles.horizontalRule} />
       </>
     );
   }
@@ -118,7 +115,7 @@ export class DocumentRow extends React.Component<
           const demotePageJSON = await demotePageCall.json();
           if (demotePageCall.ok) {
             //Check to make sure there are no errors passed back in the call per field
-            demotePageJSON.value.forEach((field: any) => {
+            demotePageJSON.value.forEach((field: IListItemFormUpdateValue) => {
               if (field.HasException) {
                 hasException = true;
                 fieldErrorMessage = field.ErrorMessage;
@@ -192,7 +189,7 @@ export class DocumentRow extends React.Component<
             await this._promoteNewsPost(item);
           const promotePageJSON = await promotePageCall.json();
           if (promotePageCall.ok) {
-            promotePageJSON.value.forEach((field: any) => {
+            promotePageJSON.value.forEach((field: IListItemFormUpdateValue) => {
               //Check to make sure there are no errors passed back in the call per field
               if (field.HasException) {
                 hasException = true;
@@ -267,13 +264,15 @@ export class DocumentRow extends React.Component<
             await this._updatePublishDate(item);
           const updatePublishDateJSON = await updatePublishDatePageCall.json();
           if (updatePublishDatePageCall.ok) {
-            updatePublishDateJSON.value.forEach((field: any) => {
-              //Check to make sure there are no errors passed back in the call per field
-              if (field.HasException) {
-                hasException = true;
-                fieldErrorMessage = field.ErrorMessage;
+            updatePublishDateJSON.value.forEach(
+              (field: IListItemFormUpdateValue) => {
+                //Check to make sure there are no errors passed back in the call per field
+                if (field.HasException) {
+                  hasException = true;
+                  fieldErrorMessage = field.ErrorMessage;
+                }
               }
-            });
+            );
 
             if (hasException) {
               this.setState({

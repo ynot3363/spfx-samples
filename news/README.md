@@ -15,7 +15,7 @@ Demonstrates how to add in additional commands to manage News Posts within a Sit
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14-green.svg)
+![version](https://img.shields.io/badge/version-1.15.2-green.svg)
 
 ## Applies to
 
@@ -34,9 +34,10 @@ The solution depends on having a Site Pages library created on the site and the 
 
 ## Version history
 
-| Version | Date              | Comments        |
-| ------- | ----------------- | --------------- |
-| 1.0     | December 31, 2022 | Initial release |
+| Version | Date              | Comments           |
+| ------- | ----------------- | ------------------ |
+| 1.1     | December 31, 2022 | Upgraded to 1.15.2 |
+| 1.0     | December 31, 2022 | Initial release    |
 
 ## Disclaimer
 

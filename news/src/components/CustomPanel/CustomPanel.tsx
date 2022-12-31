@@ -157,6 +157,7 @@ export class CustomPanel extends React.Component<
         {items.map((item: RowAccessor) => {
           return (
             <DocumentRow
+              key={item.getValueByName("ID")}
               item={item}
               formState={this.state.formState}
               command={command}

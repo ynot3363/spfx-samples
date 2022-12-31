@@ -3,7 +3,7 @@
   "solution": {
     "name": "news-client-side-solution",
     "id": "a4be3955-d1b7-48fe-9686-d9f4e5b145b5",
-    "version": "1.0.0.0",
+    "version": "1.0.1.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -12,7 +12,7 @@
       "websiteUrl": "https://anthonyepoulin.com",
       "privacyUrl": "",
       "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.14.0"
+      "mpnId": ""
     },
     "metadata": {
       "shortDescription": {
@@ -30,7 +30,7 @@
         "title": "Application Extension - Deployment of custom action",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "0047af1e-2601-4a51-813e-38f0a783f55f",
-        "version": "1.0.0.0",
+        "version": "1.0.1.0",
         "assets": {
           "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
         }
