@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="News"
-        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
-        ListTemplateId="119"
-        Properties="{}"
-        ComponentId="1d9c0333-db08-4869-b256-a8e35a7b0c4a" />
-</Elements>
