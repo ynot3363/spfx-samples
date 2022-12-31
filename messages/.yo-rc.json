@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "messages",
+    "libraryId": "9173dfed-08a3-49bc-ba48-9b1f69fd50e6",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "messages",
+    "solutionShortDescription": "messages description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

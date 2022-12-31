@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "footer",
+    "libraryId": "1d7fb255-6001-401f-9e52-2d9185fed778",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "footer",
+    "solutionShortDescription": "footer description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

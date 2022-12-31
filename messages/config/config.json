@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "messages-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/messages/MessagesApplicationCustomizer.js",
+          "manifest": "./src/extensions/messages/MessagesApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MessagesApplicationCustomizerStrings": "lib/extensions/messages/loc/{locale}.js"
+  }
+}

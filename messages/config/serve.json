@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "f35ccc1d-85aa-4dce-b11a-d68103e6dd5c": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
+            "messageListId": "a0dc5816-699f-4a14-8e1f-8b1b75207548"
+          }
+        }
+      }
+    },
+    "messages": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "f35ccc1d-85aa-4dce-b11a-d68103e6dd5c": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
+            "messageListId": "a0dc5816-699f-4a14-8e1f-8b1b75207548"
+          }
+        }
+      }
+    }
+  }
+}
