@@ -4,14 +4,14 @@
 
 Demonstrates how to add in additional commands to manage News Posts within a Site's Site Pages library. This extension will provide the abilitiy to Demote News Posts, Promote Pages to News Posts and update the Publish Date of News Posts.
 
-**Demote News Post**
-![screenshot of demote news post command]()
+**Demote / Update Publishing Date News Post**
+![screenshot of demote / update publishing date news post commands](./demoteUpdate.png)
 
-**Promote / Update Publishing Date News Post**
-![screenshot of promote / update publishing date news post commands]()
+**Promote News Post**
+![screenshot of promote news post command](./promoteNews.png)
 
 **Update Publishing Date Panel**
-![screenshot of the panel when updating publising date]()
+![screenshot of the panel when updating publising date](./updatePanel.png)
 
 ## Used SharePoint Framework Version
 

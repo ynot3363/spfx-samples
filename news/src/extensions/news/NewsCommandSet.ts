@@ -73,12 +73,14 @@ export default class NewsCommandSet extends BaseListViewCommandSet<INewsCommandS
         SPPermission.editListItems
       );
 
-    const allItemsPromoted = event.selectedRows.every(
-      (row) => row.getValueByName("PromotedState") === "2"
-    );
-    const allItemsNotPromoted = event.selectedRows.every(
-      (row) => row.getValueByName("PromotedState") === "0"
-    );
+    const allItemsPromoted =
+      event.selectedRows.every(
+        (row) => row.getValueByName("PromotedState") === "2"
+      ) && event.selectedRows.length > 0;
+    const allItemsNotPromoted =
+      event.selectedRows.every(
+        (row) => row.getValueByName("PromotedState") === "0"
+      ) && event.selectedRows.length > 0;
 
     if (userHasEditPermissions) {
       if (compareOneCommand) {
