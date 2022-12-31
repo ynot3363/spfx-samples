@@ -13,7 +13,11 @@
     "@microsoft/decorators": "1.14.0",
     "@microsoft/sp-core-library": "1.14.0",
     "@microsoft/sp-dialog": "1.14.0",
-    "@microsoft/sp-listview-extensibility": "1.14.0"
+    "@microsoft/sp-listview-extensibility": "1.14.0",
+    "@types/react": "^16.14.34",
+    "@types/react-dom": "^16.9.17",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.14.0",
