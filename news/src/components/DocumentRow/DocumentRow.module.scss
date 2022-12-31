@@ -1,0 +1,53 @@
+.documentRow {
+  display: "flex";
+  justify-content: "flex-start";
+  margin: 8px;
+
+  .icon {
+    font-size: 16px;
+    margin-top: 3px;
+    margin-right: 5px;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .refreshStart {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: running;
+  }
+
+  .successful {
+    color: #107c10;
+  }
+
+  .failed {
+    color: #a80000;
+  }
+
+  .fileName {
+    overflow: "hidden";
+    text-overflow: "ellipsis";
+    white-space: "nowrap";
+  }
+}
+
+.errorMessage {
+  font-style: italic;
+  margin: 8px;
+  overflow-wrap: break-word;
+}
+
+.horizontalRule {
+  padding: 3px;
+  border-bottom: 1px solid #e6e6e7;
+}

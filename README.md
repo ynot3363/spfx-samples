@@ -6,7 +6,8 @@ This repository houses various samples and starter code for common business scen
 
 ## Application Customizers
 
-| Solution Name | Type      | Screenshot                                                                   | Link                                    |
-| ------------- | --------- | ---------------------------------------------------------------------------- | --------------------------------------- |
-| Footer        | Extension | ![screenshot of custom footer solution](./footer/footerExtensionDesktop.png) | [Link to read me](./footer/README.md)   |
-| Messages      | Extension | ![screenshot of messages solution](./messages/messages.png)                  | [Link to read me](./messages/README.md) |
+| Solution Name | Type        | Screenshot                                                                   | Link                                    |
+| ------------- | ----------- | ---------------------------------------------------------------------------- | --------------------------------------- |
+| Footer        | Extension   | ![screenshot of custom footer solution](./footer/footerExtensionDesktop.png) | [Link to read me](./footer/README.md)   |
+| Messages      | Extension   | ![screenshot of messages solution](./messages/messages.png)                  | [Link to read me](./messages/README.md) |
+| News          | Command Set | ![screenshot of news solution](./news/demoteUpdate.png)                      | [Link to read me](./news/README.md)     |
