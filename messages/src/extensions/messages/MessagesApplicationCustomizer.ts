@@ -43,9 +43,11 @@ export default class MessagesApplicationCustomizer extends BaseApplicationCustom
      * Looks for a specific element with id spPageCanvasContent in the SharePoint page DOM to prepend our
      * messageContainer div that we will render our Messages into.
      */
-    const container: Element = document.querySelector(
-      `div[data-automation-id="contentScrollRegion"]`
-    ).children[0];
+    const container: Element = document
+      .querySelector("#spCommandBar")
+      .nextElementSibling.querySelector(
+        `div[data-automation-id="contentScrollRegion"]`
+      ).children[0];
 
     if (container) {
       this._messages = await this.getItems();
@@ -67,9 +69,11 @@ export default class MessagesApplicationCustomizer extends BaseApplicationCustom
      * page loads this is the only function that runs and if you get it once you will have a
      * reference to an old HTML element
      */
-    const container: Element = document.querySelector(
-      `div[data-automation-id="contentScrollRegion"]`
-    ).children[0];
+    const container: Element = document
+      .querySelector("#spCommandBar")
+      .nextElementSibling.querySelector(
+        `div[data-automation-id="contentScrollRegion"]`
+      ).children[0];
 
     if (!messageContainerElement && container && this._messages.length > 0) {
       const messageContainer: HTMLElement = document.createElement("div");

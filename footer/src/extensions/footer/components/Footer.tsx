@@ -1,5 +1,4 @@
 import * as React from "react";
-import style from "./Footer.module.scss";
 import { IFooterLink } from "../../../models/IFooterLink";
 import styles from "./Footer.module.scss";
 
@@ -42,17 +41,23 @@ const Footer = ({ footerLinks }: IFooterProps) => {
             linkUrl.hostname.indexOf("sharepoint") !== -1;
 
           return (
-            <div key={link.id} order={link.order} className={styles.stackItem}>
+            <div key={link.id} className={styles.stackItem}>
               <a
                 href={linkUrl.href}
                 target={isSharePointLink ? "_self" : "_blank"}
+                rel={"noreferrer"}
                 data-interception={isSharePointLink ? "on" : "off"}
                 className={styles.link}
                 style={{
                   color: linkTextColor,
                 }}
               >
-                <img role="icon" src={link.icon.url} title={link.name} />
+                <img
+                  aria-label={link.icon.desc}
+                  role="img"
+                  src={link.icon.url}
+                  title={link.icon.desc}
+                />
                 <div>{link.name}</div>
               </a>
             </div>

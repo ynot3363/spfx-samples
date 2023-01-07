@@ -43,9 +43,11 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
      * Looks for a specific element on in the SharePoint page DOM to append our
      * customFooter div that we will render our Footer into.
      */
-    const container: Element = document.querySelector(
-      `div[data-automation-id="contentScrollRegion"]`
-    ).children[0];
+    const container: Element = document
+      .querySelector("#spCommandBar")
+      .nextElementSibling.querySelector(
+        `div[data-automation-id="contentScrollRegion"]`
+      ).children[0];
 
     if (container) {
       this._footerItems = await this.getItems();
@@ -66,9 +68,11 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
      * page loads this is the only function that runs and if you get it once you will have a
      * reference to an old HTML element
      */
-    const container = document.querySelector(
-      `div[data-automation-id="contentScrollRegion"]`
-    ).children[0];
+    const container = document
+      .querySelector("#spCommandBar")
+      .nextElementSibling.querySelector(
+        `div[data-automation-id="contentScrollRegion"]`
+      ).children[0];
 
     if (!footerElement && container && this._footerItems.length > 0) {
       const footer: HTMLElement = document.createElement("footer");
