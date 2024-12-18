@@ -1,0 +1,48 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.tabs {
+  overflow: hidden;
+
+  .editMode {
+    border-radius: 6px;
+    padding: 7px 20px 14px 20px;
+    background-color: "[theme:menuItemBackgroundPressed, default: #edebe9]";
+    color: "[theme:inputText, default: #323130]";
+
+    .description {
+      margin: 10px auto 20px;
+    }
+
+    .configureTabsButton {
+      text-align: left;
+    }
+  }
+
+  hr {
+    margin: 20px;
+    border: none;
+    border-top: 1px solid;
+    color: $ms-color-gray20;
+  }
+
+  .pivotTabs {
+    display: block;
+  }
+
+  .tabPanel {
+    display: block;
+    width: 100%;
+
+    .activeTab {
+      max-height: unset;
+    }
+
+    .inactiveTab {
+      max-height: 0px;
+      visibility: hidden;
+      margin: 0px;
+      padding: 0px;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "tabbed-webparts",
+    "libraryId": "3481738b-4130-4c3e-938d-05c56d470a0c",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "tabbed-webparts",
+    "solutionShortDescription": "tabbed-webparts description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

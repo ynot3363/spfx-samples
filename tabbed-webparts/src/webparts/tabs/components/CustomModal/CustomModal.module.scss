@@ -1,0 +1,64 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.configureContainer {
+  display: flex;
+  flex-flow: column nowrap;
+
+  @media screen and (min-width: $ms-screen-min-lg) {
+    min-width: 500px;
+    max-width: 1236px;
+  }
+
+  .configureHeader {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 0px 24px;
+    background-color: #ffffff;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+
+    .titleSection {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 700;
+      width: 100%;
+
+      .dismissIconButton {
+        margin-left: auto;
+        margin-top: 4px;
+        margin-right: 2px;
+        color: "[theme:neutralPrimary, default: #d8e6fe]";
+      }
+    }
+  }
+
+  .configureBody {
+    padding: 0px 12px 14px 24px;
+    background-color: #ffffff;
+
+    .reorderDescription {
+      margin: 10px;
+      font-size: 12px;
+      font-style: italic;
+      text-align: right;
+    }
+  }
+
+  .configureFooter {
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    padding: 12px 12px 14px 24px;
+    background-color: #f9f9f9;
+    position: sticky;
+    bottom: 0px;
+  }
+}

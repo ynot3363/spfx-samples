@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "tabbed-webparts-client-side-solution",
+    "id": "3481738b-4130-4c3e-938d-05c56d470a0c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Anthony Poulin",
+      "websiteUrl": "anthonyepoulin.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "The Tabs web part allows you select web parts in the same section and render them under a tabbed ui when the page is in read mode."
+      },
+      "longDescription": {
+        "default": "The Tabs web part allows you select web parts in the same section and render them under a tabbed ui when the page is in read mode."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "tabbed-webparts Feature",
+        "description": "The feature that activates elements of the tabbed-webparts solution.",
+        "id": "b4b07448-a75e-48ef-a3ea-b4f8e5588043",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/tabbed-webparts.sppkg"
+  }
+}
