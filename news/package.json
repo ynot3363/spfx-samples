@@ -9,14 +9,15 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "@fluentui/react": "^8.66.0",
+    "@fluentui/react": "8.66.0",
     "@microsoft/decorators": "1.15.2",
     "@microsoft/sp-adaptive-card-extension-base": "1.15.2",
     "@microsoft/sp-core-library": "1.15.2",
     "@microsoft/sp-dialog": "1.15.2",
+    "@microsoft/sp-http": "1.15.2",
     "@microsoft/sp-listview-extensibility": "1.15.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "tslib": "2.3.1"
   },
   "devDependencies": {

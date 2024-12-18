@@ -14,7 +14,10 @@
     "@microsoft/sp-application-base": "1.15.2",
     "@microsoft/sp-core-library": "1.15.2",
     "@microsoft/sp-dialog": "1.15.2",
+    "@microsoft/sp-http": "1.15.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "tslib": "2.3.1"
   },
   "devDependencies": {
