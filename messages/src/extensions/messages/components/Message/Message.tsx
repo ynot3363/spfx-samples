@@ -1,6 +1,7 @@
-import { IIconProps, MessageBar, MessageBarType } from "@fluentui/react";
 import * as React from "react";
 import { IMessage } from "../../../../models/IMessage";
+import { MessageBar, MessageBarType } from "@fluentui/react/lib/MessageBar";
+import { IIconProps } from "@fluentui/react/lib/Icon";
 
 export interface IMessageProps {
   /**
