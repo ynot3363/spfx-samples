@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.15.2",
+    "version": "1.20.0",
     "libraryName": "footer",
     "libraryId": "1d7fb255-6001-401f-9e52-2d9185fed778",
     "environment": "spo",
@@ -12,6 +12,11 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "extension",
-    "extensionType": "ApplicationCustomizer"
+    "extensionType": "ApplicationCustomizer",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "nodeVersion": "18.20.3"
   }
 }
