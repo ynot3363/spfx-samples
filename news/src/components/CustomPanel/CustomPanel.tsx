@@ -3,10 +3,6 @@ import styles from "./CustomPanel.module.scss";
 import { Panel } from "@fluentui/react/lib/Panel";
 import { Text } from "@fluentui/react/lib/Text";
 import {
-  DefaultButton,
-  PrimaryButton,
-} from "@fluentui/react/lib/components/Button";
-import {
   ListViewCommandSetContext,
   RowAccessor,
 } from "@microsoft/sp-listview-extensibility";
@@ -14,8 +10,9 @@ import { DocumentRow } from "../DocumentRow/DocumentRow";
 import {
   DatePicker,
   defaultDatePickerStrings,
-} from "@fluentui/react/lib/components/DatePicker";
-import { DayOfWeek } from "@fluentui/react";
+} from "@fluentui/react/lib/DatePicker";
+import { DefaultButton, PrimaryButton } from "@fluentui/react/lib/Button";
+import { DayOfWeek } from "@fluentui/react/lib/Calendar";
 
 export interface ICustomPanelState {
   formState: string;

@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.15.2",
+    "version": "1.20.0",
     "libraryName": "news",
     "libraryId": "a4be3955-d1b7-48fe-9686-d9f4e5b145b5",
     "environment": "spo",
@@ -12,6 +12,11 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "extension",
-    "extensionType": "ListViewCommandSet"
+    "extensionType": "ListViewCommandSet",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "nodeVersion": "18.20.3"
   }
 }
