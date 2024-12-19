@@ -3,7 +3,7 @@
   "solution": {
     "name": "Custom Footer Solution - AEP",
     "id": "1d7fb255-6001-401f-9e52-2d9185fed778",
-    "version": "1.0.0.0",
+    "version": "1.0.2.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "Application Extension - Deployment of custom footer",
         "description": "Deploys a custom footer to modern pages",
         "id": "b9fda583-c9da-45c2-b3ca-5286a78c80ab",
-        "version": "1.0.0.0",
+        "version": "1.0.2.0",
         "assets": {
           "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
         }

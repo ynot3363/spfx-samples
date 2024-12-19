@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://anthonyepoulin.sharepoint.com/SitePages/Home.aspx",
+      "pageUrl": "https://{tenantDomain}/_layouts/workbench.aspx",
       "customActions": {
         "b99ce130-58f6-4147-84c6-e4d09180a357": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -16,7 +16,7 @@
       }
     },
     "footer": {
-      "pageUrl": "https://anthonyepoulin.sharepoint.com/SitePages/Home.aspx",
+      "pageUrl": "https://anthonyepoulin.sharepoint.com",
       "customActions": {
         "b99ce130-58f6-4147-84c6-e4d09180a357": {
           "location": "ClientSideExtension.ApplicationCustomizer",
