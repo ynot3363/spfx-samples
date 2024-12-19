@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://{tenantDomain}/_layouts/workbench.aspx",
       "customActions": {
         "1d9c0333-db08-4869-b256-a8e35a7b0c4a": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -13,7 +13,7 @@
       }
     },
     "news": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://{tenantDomain}/_layouts/workbench.aspx",
       "customActions": {
         "1d9c0333-db08-4869-b256-a8e35a7b0c4a": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",

@@ -4,7 +4,7 @@ import {
   ListViewCommandSetContext,
   RowAccessor,
 } from "@microsoft/sp-listview-extensibility";
-import { Icon } from "@fluentui/react";
+import { Icon } from "@fluentui/react/lib/Icon";
 import { Text } from "@fluentui/react/lib/Text";
 import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
 import { Log } from "@microsoft/sp-core-library";
