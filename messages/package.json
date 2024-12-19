@@ -20,7 +20,6 @@
     "@microsoft/sp-dialog": "1.20.0",
     "@microsoft/sp-http": "1.20.0",
     "eslint-plugin-react-hooks": "4.6.0",
-    "office-ui-fabric-react": "7.199.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "tslib": "2.3.1"
@@ -28,8 +27,6 @@
   "devDependencies": {
     "@microsoft/eslint-config-spfx": "1.20.2",
     "@microsoft/eslint-plugin-spfx": "1.20.2",
-    "@microsoft/rush-stack-compiler-3.9": "0.4.47",
-    "@microsoft/rush-stack-compiler-4.5": "0.2.2",
     "@microsoft/rush-stack-compiler-4.7": "0.1.0",
     "@microsoft/sp-build-web": "1.20.2",
     "@microsoft/sp-module-interfaces": "1.20.2",
