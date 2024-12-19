@@ -4,6 +4,6 @@
         Title="Messages"
         Location="ClientSideExtension.ApplicationCustomizer"
         ComponentId="f35ccc1d-85aa-4dce-b11a-d68103e6dd5c"
-        Properties="{&quot;intranetUrl&quot;:&quot;https://anthonyepoulin.sharepoint.com&quot;,&quot;messageListId&quot;:&quot;a0dc5816-699f-4a14-8e1f-8b1b75207548&quot;}">
+        Properties="{&quot;intranetUrl&quot;:&quot;https://anthonyepoulin.sharepoint.com&quot;,&quot;messageListId&quot;:&quot;70348906-a3f7-42df-9aeb-fa1ff00de11c&quot;}">
     </ClientSideComponentInstance>
 </Elements>
