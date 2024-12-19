@@ -1,7 +1,11 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import { Log } from "@microsoft/sp-core-library";
-import { BaseApplicationCustomizer } from "@microsoft/sp-application-base";
+import {
+  BaseApplicationCustomizer,
+  PlaceholderContent,
+  PlaceholderName,
+} from "@microsoft/sp-application-base";
 import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
 import * as strings from "MessagesApplicationCustomizerStrings";
 import { override } from "@microsoft/decorators";
@@ -30,6 +34,7 @@ export default class MessagesApplicationCustomizer extends BaseApplicationCustom
    * SharePoint list.
    */
   private _messages: IMessage[] = [];
+  private _topPlaceholder: PlaceholderContent | undefined;
 
   /**
    * Overrides the onInit function and searchs for the canvas location to insert the
@@ -39,61 +44,52 @@ export default class MessagesApplicationCustomizer extends BaseApplicationCustom
   public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    /**
-     * Looks for a specific element with id spPageCanvasContent in the SharePoint page DOM to prepend our
-     * messageContainer div that we will render our Messages into.
-     */
-    const container: Element = document
-      .querySelector("#spCommandBar")
-      .nextElementSibling.querySelector(
-        `div[data-automation-id="contentScrollRegion"]`
-      ).children[0];
-
-    if (container) {
-      this._messages = await this.getItems();
+    if (!this.properties.intranetUrl || !this.properties.messageListId) {
+      const error: Error = new Error(
+        "Missing required configuration properties."
+      );
+      Log.error(LOG_SOURCE, error);
     }
 
-    this.context.application.navigatedEvent.add(this, this.renderMessages);
+    if (!this._topPlaceholder) {
+      this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(
+        PlaceholderName.Top,
+        { onDispose: this._onDispose }
+      );
+    }
+
+    this._messages = await this._getItems();
+
+    this.context.application.navigatedEvent.add(this, this._renderMessages);
+
+    this._renderMessages();
 
     return Promise.resolve();
+  }
+
+  private _onDispose(placeholderContent: PlaceholderContent): void {
+    ReactDom.unmountComponentAtNode(placeholderContent.domElement);
   }
 
   /**
    * Searches for the canvas location to insert the footer into the page.
    */
-  private renderMessages(): void {
-    const messageContainerElement: Element =
-      document.getElementById("messageContainer");
-    /**
-     * You need to get the container on the page in the renderMessages method because on partial
-     * page loads this is the only function that runs and if you get it once you will have a
-     * reference to an old HTML element
-     */
-    const container: Element = document
-      .querySelector("#spCommandBar")
-      .nextElementSibling.querySelector(
-        `div[data-automation-id="contentScrollRegion"]`
-      ).children[0];
+  private _renderMessages(): void {
+    const element: React.ReactElement<IMessageProps> = React.createElement(
+      Message,
+      {
+        messages: this._messages,
+      }
+    );
 
-    if (!messageContainerElement && container && this._messages.length > 0) {
-      const messageContainer: HTMLElement = document.createElement("div");
-      const element: React.ReactElement<IMessageProps> = React.createElement(
-        Message,
-        {
-          messages: this._messages,
-        }
-      );
-
-      container.prepend(messageContainer);
-      ReactDom.render(element, messageContainer);
-    }
+    ReactDom.render(element, this._topPlaceholder.domElement);
   }
 
   /**
    * Makes a REST call to the associated list that holds the footer links
    * @returns A collection of IMessage
    */
-  private async getItems(): Promise<IMessage[]> {
+  private async _getItems(): Promise<IMessage[]> {
     const now = new Date();
     const url: string = `${this.properties.intranetUrl}/_api/web/lists(guid'${
       this.properties.messageListId

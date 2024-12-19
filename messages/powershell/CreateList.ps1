@@ -4,7 +4,7 @@ $listName = "Messages"
 $listUrl = "lists/messages"
 
 Try{
-    Connect-PnPOnline -Url $siteUrl -Interactive
+    Connect-PnPOnline -Url $siteUrl -Interactive -ClientId "1b1c396d-86b7-4e0f-840f-2fe7b6946ac8"
 
     #Create the custom footer list
     Write-Host "Creating the $($listName) list..." -ForegroundColor Cyan
@@ -51,4 +51,3 @@ Try{
 } Catch {
     Write-Host "Error $($_.Exception.Message)" -ForegroundColor Red
 }
-

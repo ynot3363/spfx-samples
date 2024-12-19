@@ -4,25 +4,25 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://{tenantDomain}/_layouts/workbench.aspx",
       "customActions": {
         "f35ccc1d-85aa-4dce-b11a-d68103e6dd5c": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
-            "messageListId": "a0dc5816-699f-4a14-8e1f-8b1b75207548"
+            "intranetUrl": "https://anthonyepoulin.sharepoint.com",
+            "messageListId": "70348906-a3f7-42df-9aeb-fa1ff00de11c"
           }
         }
       }
     },
     "messages": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://anthonyepoulin.sharepoint.com",
       "customActions": {
         "f35ccc1d-85aa-4dce-b11a-d68103e6dd5c": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
-            "messageListId": "a0dc5816-699f-4a14-8e1f-8b1b75207548"
+            "intranetUrl": "https://anthonyepoulin.sharepoint.com",
+            "messageListId": "70348906-a3f7-42df-9aeb-fa1ff00de11c"
           }
         }
       }
