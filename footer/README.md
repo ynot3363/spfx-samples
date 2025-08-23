@@ -12,7 +12,7 @@ Screen width < 640px:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14-green.svg)
+![version](https://img.shields.io/badge/version-1.20-green.svg)
 
 ## Applies to
 
