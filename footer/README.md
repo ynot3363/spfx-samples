@@ -2,7 +2,7 @@
 
 ## Summary
 
-Demonstrates how you can create a custom footer for your site and add it to the bottom of the page. **This extension will not attach it to the footer section but rather append it to the page.**
+Demonstrates how you can create a custom footer for your site and add it to the bottom of the page. **This extension will not attach it to the bottom placeholder but rather append it to the page.**
 
 Screen width > 640px:  
 ![screenshot of extension](./footerExtensionDesktop.png)

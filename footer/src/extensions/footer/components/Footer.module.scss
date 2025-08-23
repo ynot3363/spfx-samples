@@ -69,5 +69,10 @@
     font-size: 14px;
     margin-right: 10px;
     text-align: right;
+    @media (max-width: 640px) {
+      margin-top: 10px;
+      margin-right: 0px;
+      text-align: center;
+    }
   }
 }
