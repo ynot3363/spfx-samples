@@ -4,24 +4,20 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "pageUrl": "https://{tenantDomain}/",
       "customActions": {
         "8d1f43a2-1dec-456d-a022-107c709c1320": {
           "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {
-            "testMessage": "Test message"
-          }
+          "properties": {}
         }
       }
     },
     "analytics": {
-      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "pageUrl": "https://anthonyepoulin.sharepoint.com/",
       "customActions": {
         "8d1f43a2-1dec-456d-a022-107c709c1320": {
           "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {
-            "testMessage": "Test message"
-          }
+          "properties": {}
         }
       }
     }

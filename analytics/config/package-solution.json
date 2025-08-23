@@ -3,7 +3,7 @@
   "solution": {
     "name": "analytics-client-side-solution",
     "id": "5a13c9c2-424b-4c50-b561-770cf2ea0e02",
-    "version": "1.0.0.0",
+    "version": "1.0.1.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -12,7 +12,7 @@
       "websiteUrl": "",
       "privacyUrl": "",
       "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.20.0"
+      "mpnId": ""
     },
     "metadata": {
       "shortDescription": {
@@ -30,12 +30,9 @@
         "title": "Application Extension - Deployment of custom action",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "bf3517b8-9890-408c-8139-685a87630c38",
-        "version": "1.0.0.0",
+        "version": "1.0.1.0",
         "assets": {
-          "elementManifests": [
-            "elements.xml",
-            "ClientSideInstance.xml"
-          ]
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
         }
       }
     ]

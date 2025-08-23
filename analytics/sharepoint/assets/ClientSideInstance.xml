@@ -4,6 +4,6 @@
         Title="Analytics"
         Location="ClientSideExtension.ApplicationCustomizer"
         ComponentId="8d1f43a2-1dec-456d-a022-107c709c1320"
-        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+        Properties="{}">
     </ClientSideComponentInstance>
 </Elements>
