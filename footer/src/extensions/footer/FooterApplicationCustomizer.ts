@@ -1,17 +1,16 @@
-import { ISPItem } from "./../../models/ISPItem";
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { Log } from "@microsoft/sp-core-library";
+import * as strings from "FooterApplicationCustomizerStrings";
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
   PlaceholderName,
 } from "@microsoft/sp-application-base";
+import { Log } from "@microsoft/sp-core-library";
 import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
-
-import * as strings from "FooterApplicationCustomizerStrings";
 import { override } from "@microsoft/decorators";
-import { IFooterLink } from "../../models/IFooterLink";
+import { IFooterLink } from "./models/IFooterLink";
+import { ISPItem } from "./models/ISPItem";
 import Footer, { IFooterProps } from "./components/Footer";
 
 const LOG_SOURCE: string = "FooterApplicationCustomizer";
@@ -23,36 +22,52 @@ const LOG_SOURCE: string = "FooterApplicationCustomizer";
  */
 export interface IFooterApplicationCustomizerProperties {
   // The link to the URL where the footer list is on
-  intranetUrl: string;
+  siteUrl: string;
   // The GUID for the list that holds the footer links
-  footerListId: string;
+  listGuid: string;
+  // The ID of the footer element
+  footerElementId: string;
+  // The cacheKey to use for storing footer links in local storage
+  cacheKey: string;
+  // Whether to show a copyright message in the footer, defaults to false
+  showCopyright?: boolean;
+  // Company name
+  companyName?: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class FooterApplicationCustomizer extends BaseApplicationCustomizer<IFooterApplicationCustomizerProperties> {
-  /**
-   * Holds a collection of footer links from the associated list
-   */
-  private _footerItems: IFooterLink[] = [];
+  private _footerLinks: IFooterLink[] = [];
   private _bottomPlaceholder: PlaceholderContent | undefined;
 
-  /**
-   * Overrides the onInit function and searchs for the canvas location to insert the
-   * footer into the page.
-   */
   @override
   public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    if (!this.properties.intranetUrl || !this.properties.footerListId) {
+    if (
+      !this.properties.siteUrl ||
+      !this.properties.listGuid ||
+      !this.properties.cacheKey ||
+      !this.properties.footerElementId
+    ) {
       const error: Error = new Error(
         "Missing required configuration properties."
       );
       Log.error(LOG_SOURCE, error);
+      return Promise.reject(error);
+    }
+
+    if (this.properties.showCopyright === undefined) {
+      this.properties.showCopyright = false;
+    }
+
+    if (!this.properties.companyName) {
+      this.properties.companyName = "";
     }
 
     /**
-     * Without loading the placeholder the extension fails.
+     * Even though we are not using the bottom placeholder, we need to create it
+     * otherwise the extension will fail to load on the page.
      */
     if (!this._bottomPlaceholder) {
       this._bottomPlaceholder =
@@ -62,50 +77,92 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
         );
     }
 
-    this._footerItems = await this._getItems();
+    try {
+      this._footerLinks = await this._getItems();
+    } catch (error) {
+      Log.error(LOG_SOURCE, error);
+    }
 
     this._renderFooter();
+
     this.context.application.navigatedEvent.add(this, this._renderFooter);
 
     return Promise.resolve();
   }
 
-  /**
-   * Searches for the canvas location to insert the footer into the page.
-   */
   private _renderFooter(): void {
-    const footerElement: Element = document.querySelector("#customFooter");
+    const { companyName, footerElementId, showCopyright } = this.properties;
+
     /**
-     * You need to get the container on the page in the renderFooter method because on partial
-     * page loads this is the only function that runs and if you get it once you will have a
-     * reference to an old HTML element
+     * Helper function to render the footer so we can use the observer pattern to
+     * load the footer onto the page when the adjacent elements are available.
+     * @returns A boolean indicating whether the footer was successfully rendered
      */
-    const container = document
-      .querySelector("#spCommandBar")
-      .nextElementSibling.querySelector(
-        `div[data-automation-id="contentScrollRegion"]`
-      ).children[0];
+    const tryRenderFooter = (): boolean => {
+      if (document.getElementById(footerElementId)) {
+        return true;
+      }
+      try {
+        const mainContent = document.querySelector(".mainContent");
+        if (!mainContent) return false;
 
-    if (!footerElement && container && this._footerItems.length > 0) {
-      const footer: HTMLElement = document.createElement("footer");
-      footer.id = "custom-footer";
-      const element: React.ReactElement<IFooterProps> = React.createElement(
-        Footer,
-        {
-          footerLinks: this._footerItems,
+        const container = mainContent.querySelector(
+          `div[data-automation-id="contentScrollRegion"]`
+        );
+        if (!container) return false;
+
+        const footer: HTMLElement = document.createElement("footer");
+        footer.id = footerElementId;
+
+        const element: React.ReactElement<IFooterProps> = React.createElement(
+          Footer,
+          {
+            footerLinks: this._footerLinks,
+            showCopyright: showCopyright,
+            companyName: companyName,
+          }
+        );
+
+        // Append the footer to the first child of the container, if available.
+        if (container.children.length > 0) {
+          container.children[0].appendChild(footer);
+        } else {
+          container.appendChild(footer);
         }
-      );
 
-      container.appendChild(footer);
-      ReactDom.render(element, footer);
+        ReactDom.render(element, footer);
+
+        return true;
+      } catch (error) {
+        console.error(error);
+        return false;
+      }
+    };
+
+    // Attempt to render immediately.
+    if (tryRenderFooter()) {
+      return;
     }
+
+    // If not rendered yet, set up a MutationObserver to wait for the container.
+    const observer = new MutationObserver(() => {
+      if (tryRenderFooter()) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
   }
 
   private _onDispose(placeholderContent: PlaceholderContent): void {
-    const footer = document.getElementById("custom-footer");
+    const footer = document.getElementById(this.properties.footerElementId);
     if (footer) {
       ReactDom.unmountComponentAtNode(footer);
     }
+    ReactDom.unmountComponentAtNode(placeholderContent.domElement);
   }
 
   /**
@@ -113,24 +170,26 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
    * @returns A collection of IFooterLink
    */
   private async _getItems(): Promise<IFooterLink[]> {
-    const url: string = `${this.properties.intranetUrl}/_api/web/lists(guid'${this.properties.footerListId}')/items?$orderBy=linkOrder`;
+    const { siteUrl, listGuid, cacheKey } = this.properties;
+    const url: string = `${siteUrl}/_api/web/lists(guid'${listGuid}')/items?$orderBy=linkOrder`;
 
     return new Promise<IFooterLink[]>((resolve, reject) => {
       const now = new Date();
-      const twentyMinutesLater = now.setMinutes(now.getMinutes() + 20);
-      /**
-       * Retrieve footerLinks from localStorage if they exist
-       */
-      const checkLocalStoreItem = localStorage.getItem("footerLinks");
+      const expirationTime = now.setMinutes(now.getMinutes() + 20); // Arbitratry cache time of 20 minutes change as needed
+      const cachedLinks = localStorage.getItem(cacheKey);
 
-      if (checkLocalStoreItem) {
-        const footerLinksLocalStore = JSON.parse(checkLocalStoreItem);
+      if (cachedLinks) {
+        try {
+          const cachedLinksJSON = JSON.parse(cachedLinks);
 
-        /**
-         * Ensure the local storage item is not older than 20 minutes
-         */
-        if (now.getTime() < footerLinksLocalStore.expires) {
-          resolve(footerLinksLocalStore.value);
+          if (now.getTime() < cachedLinksJSON.expires) {
+            resolve(cachedLinksJSON.value);
+          }
+        } catch (error) {
+          console.error(
+            "Error parsing cached footer links, go fetch them",
+            error
+          );
         }
       }
 
@@ -140,34 +199,28 @@ export default class FooterApplicationCustomizer extends BaseApplicationCustomiz
           if (response.ok) {
             const spItems: ISPItem[] = (await response.json()).value;
 
-            /**
-             * Map through the SharePoint list data and map it to our IFooterLink data model
-             */
-            const footerItems: IFooterLink[] = spItems.map((item) => {
-              return {
-                name: item.Title || "",
-                link: item.link
-                  ? { url: item.link.Url, desc: item.link.Description }
-                  : null,
-                icon: item.icon
-                  ? { url: item.icon.Url, desc: item.icon.Description }
-                  : null,
-                order: item.linkOrder || null,
-                id: item.ID,
-              };
-            });
+            const links: IFooterLink[] = spItems
+              .filter((link) => !!link.Title && !!link.link)
+              .map((item, index) => {
+                return {
+                  name: item.Title || "",
+                  link: { url: item.link.Url, desc: item.link.Description },
+                  icon: item.icon
+                    ? { url: item.icon.Url, desc: item.icon.Description }
+                    : undefined,
+                  order: item.linkOrder || index,
+                  id: item.ID,
+                };
+              });
 
-            /**
-             * Create an item to store in local storage and add an expiration time of 20 minutes
-             */
             const localStoreItem = {
-              value: footerItems,
-              expires: twentyMinutesLater,
+              value: links,
+              expires: expirationTime,
             };
 
-            localStorage.setItem("footerLinks", JSON.stringify(localStoreItem));
+            localStorage.setItem(cacheKey, JSON.stringify(localStoreItem));
 
-            resolve(footerItems);
+            resolve(links);
           } else {
             reject(response.statusText);
           }

@@ -6,11 +6,11 @@ export interface IFooterLink {
   /**
    * A url that points to where the link should take the user
    */
-  link: IUrl;
+  link?: IUrl;
   /**
    * A url that points to the icon to load for the footer
    */
-  icon: IUrl;
+  icon?: IUrl;
   /**
    * the order of the link in the list
    */

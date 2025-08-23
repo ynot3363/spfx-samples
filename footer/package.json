@@ -6,7 +6,11 @@
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
-    "test": "gulp test"
+    "test": "gulp test",
+    "serve": "gulp clean && gulp serve --nobrowser --max-old-space-size=8192"
+  },
+  "engines": {
+    "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
   },
   "engines": {
     "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
@@ -38,6 +42,6 @@
     "eslint": "8.57.0",
     "gulp": "~4.0.2",
     "typescript": "4.7.4",
-    "webpack-bundle-analyzer": "^4.5.0"
+    "webpack-bundle-analyzer": "4.5.0"
   }
 }

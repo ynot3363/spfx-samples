@@ -14,17 +14,17 @@ Try{
 
     #Update the title column
     Write-Host "Updating the Title column..." -ForegroundColor Cyan
-    Set-PnPField -List $list -Identity "Title" -Values @{Title="Link Name"; Description="The name you would like to display for the footer link."}
+    Set-PnPField -List $list -Identity "Title" -Required -Values @{Title="Link Name"; Description="The name you would like to display for the footer link."}
     
     # Link column
     Write-Host "Creating the Link column..." -ForegroundColor Cyan
-    Add-PnPField -List $list -Type "URL" -InternalName "link" -DisplayName "Link" -AddToDefaultView -Required | Out-Null
+    Add-PnPField -List $list -Type "URL" -InternalName "link" -DisplayName "Link" -RefooterElementId -AddToDefaultView | Out-Null
     Write-Host "Updating the Link column description..." -ForegroundColor Cyan
     Set-PnPField -List $list -Identity "Link" -Values @{Description="The site, page or resource you would like to navigate the user to."}
     
     # Icon column
     Write-Host "Creating the Icon column..." -ForegroundColor Cyan
-    Add-PnPField -List $list -Type "URL" -InternalName "icon" -DisplayName "Icon" -AddToDefaultView -Required | Out-Null
+    Add-PnPField -List $list -Type "URL" -InternalName "icon" -DisplayName "Icon" -AddToDefaultView | Out-Null
     Write-Host "Updating the Icon description..." -ForegroundColor Cyan
     Set-PnPField -List $list -Identity "Icon" -Values @{Description="An link that points to the icon for the link"}
 

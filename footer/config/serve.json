@@ -9,8 +9,12 @@
         "b99ce130-58f6-4147-84c6-e4d09180a357": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
-            "footerListId": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6"
+            "siteUrl": "https://anthonyepoulin.sharepoint.com",
+            "listGuid": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6",
+            "footerElementId": "aepCustomFooter",
+            "cacheKey": "aepFooterLinks",
+            "showCopyright": "true",
+            "companyName": "Anthony as a Service"
           }
         }
       }
@@ -21,8 +25,12 @@
         "b99ce130-58f6-4147-84c6-e4d09180a357": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "intranetlUrl": "https://anthonyepoulin.sharepoint.com",
-            "footerListId": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6"
+            "siteUrl": "https://anthonyepoulin.sharepoint.com",
+            "listGuid": "71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6",
+            "footerElementId": "aepCustomFooter",
+            "cacheKey": "aepFooterLinks",
+            "showCopyright": "true",
+            "companyName": "Anthony as a Service"
           }
         }
       }
