@@ -1,40 +1,53 @@
 import * as React from "react";
-import { IFooterLink } from "../../../models/IFooterLink";
 import styles from "./Footer.module.scss";
+import { IFooterLink } from "../models/IFooterLink";
 
 export interface IFooterProps {
   /**
    * A collection of IFooterLink to render
    */
   footerLinks: IFooterLink[];
+  /**
+   * Whether to show the copyright message in the footer
+   */
+  showCopyright: boolean;
+  /**
+   * The company name to show in the copyright message
+   */
+  companyName: string;
 }
 
 declare global {
   interface Window {
-    __themeState__: any;
+    __themeState__: {
+      theme: {
+        primaryButtonBackground: string;
+        primaryButtonText: string;
+      };
+    };
   }
 }
 
-const Footer = ({ footerLinks }: IFooterProps) => {
-  /**
-   * Set the background color of the container based on the site theme otherwise default to blue
-   */
+const Footer = ({ companyName, footerLinks, showCopyright }: IFooterProps) => {
   const backgroundColor =
-    window.__themeState__.theme.primaryButtonBackground || "#0086bd";
-
-  /**
-   * Set the link text color based on the site theme otherwise default to white
-   */
+    window.__themeState__.theme.primaryButtonBackground || "#041e42";
   const linkTextColor =
     window.__themeState__.theme.primaryButtonText || "#ffffff";
 
   return (
     <div
-      id="customFooter"
       style={{ backgroundColor: backgroundColor }}
       className={styles.footerContainer}
     >
       <div className={styles.stack}>
+        <div className={styles.stackItem} style={{ flex: 1 }}>
+          <img
+            src={require("../assets/FooterLogo.png")}
+            alt="Footer Logo"
+            title="Footer Logo"
+            width="300px"
+          />
+        </div>
         {footerLinks.map((link) => {
           const linkUrl = new URL(link.link.url);
           const isSharePointLink =
@@ -52,18 +65,27 @@ const Footer = ({ footerLinks }: IFooterProps) => {
                   color: linkTextColor,
                 }}
               >
-                <img
-                  aria-label={link.icon.desc}
-                  role="img"
-                  src={link.icon.url}
-                  title={link.icon.desc}
-                />
+                {!!link.icon && (
+                  <img
+                    aria-label={link.icon.desc}
+                    role="img"
+                    src={link.icon.url}
+                    title={link.icon.desc}
+                  />
+                )}
                 <div>{link.name}</div>
               </a>
             </div>
           );
         })}
       </div>
+      {showCopyright && (
+        <div className={styles.copyright}>
+          <span style={{ color: linkTextColor }}>
+            © {new Date().getFullYear()} {companyName} All rights reserved.{" "}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

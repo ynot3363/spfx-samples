@@ -4,6 +4,7 @@
         Title="Footer"
         Location="ClientSideExtension.ApplicationCustomizer"
         ComponentId="b99ce130-58f6-4147-84c6-e4d09180a357"
-        Properties="{&quot;intranetUrl&quot;:&quot;https://anthonyepoulin.sharepoint.com&quot;,&quot;footerListId&quot;:&quot;71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6&quot;}">
+        Properties="{&quot;siteUrl&quot;:&quot;https://anthonyepoulin.sharepoint.com&quot;,&quot;listGuid&quot;:&quot;71DE9F3F-ADEA-4737-ABDD-5F4EB7EB73F6&quot;,&quot;footerElementId&quot;:&quot;aepCustomFooter&quot;,&quot;cacheKey&quot;:&quot;aepFooterLinks&quot;,&quot;showCopyright&quot;:true,&quot;companyName&quot;:&quot;Anthony as a Service&quot;}"
+    >
     </ClientSideComponentInstance>
 </Elements>

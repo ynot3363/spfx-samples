@@ -31,9 +31,11 @@ The solution depends on an associated list to hold the links for the footer. The
 
 ## Version history
 
-| Version | Date           | Comments        |
-| ------- | -------------- | --------------- |
-| 1.0     | April 15, 2022 | Initial release |
+| Version | Date              | Comments                                    |
+| ------- | ----------------- | ------------------------------------------- |
+| 1.0.2   | August 23, 2025   | Updated to leverage observer pattern and UI |
+| 1.0.1   | December 19, 2024 | Upgraded to 1.20.0, fixed loading issues    |
+| 1.0.0   | April 15, 2022    | Initial release                             |
 
 ## Disclaimer
 
