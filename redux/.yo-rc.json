@@ -1,0 +1,18 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.17.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "redux",
+    "libraryId": "715a4ae9-8118-4caf-bf91-9e4e0f55feda",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "redux",
+    "solutionShortDescription": "redux description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

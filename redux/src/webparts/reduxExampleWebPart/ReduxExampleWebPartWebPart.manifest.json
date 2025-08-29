@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "a52e1a12-c7d1-446b-916c-b3b541de742c",
+  "alias": "ReduxExampleWebPartWebPart",
+  "componentType": "WebPart",
+  "manifestVersion": 2,
+  "supportedHosts": [
+    "SharePointWebPart",
+    "TeamsPersonalApp",
+    "TeamsTab",
+    "SharePointFullPage"
+  ],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": { "default": "Advanced" },
+      "title": { "default": "ReduxExampleWebPart" },
+      "description": { "default": "ReduxExampleWebPart description" },
+      "officeFabricIconFontName": "Page",
+      "properties": {}
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.reduxExampleWebPart {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  font-family: var(--fontFamilyCustomFont100, var(--fontFamilyBase));
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-family: var(--fontFamilyCustomFont100, var(--fontFamilyBase));
+    font-weight: 600;
+  }
+}

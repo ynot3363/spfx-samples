@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "redux-example-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reduxExampleWebPart/ReduxExampleWebPartWebPart.js",
+          "manifest": "./src/webparts/reduxExampleWebPart/ReduxExampleWebPartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReduxExampleWebPartWebPartStrings": "lib/webparts/reduxExampleWebPart/loc/{locale}.js"
+  }
+}
