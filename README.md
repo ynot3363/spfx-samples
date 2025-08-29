@@ -15,6 +15,7 @@ This repository houses various samples and starter code for common business scen
 
 ## Web Parts
 
-| Solution Name | Type     | Screenshot                                                                | Link                                           |
-| ------------- | -------- | ------------------------------------------------------------------------- | ---------------------------------------------- |
-| Tabs          | Web Part | ![screenshot of tabs solution](./tabbed-webparts/images/TabsReadMode.png) | [Link to read me](./tabbed-webparts/README.md) |
+| Solution Name | Type     | Screenshot                                                                  | Link                                           |
+| ------------- | -------- | --------------------------------------------------------------------------- | ---------------------------------------------- |
+| Redux Sample  | Web Part | ![screenshot of redux sample solution](./redux/redux-sample-screenshot.png) | [Link to read me](./redux//README.md)          |
+| Tabs          | Web Part | ![screenshot of tabs solution](./tabbed-webparts/images/TabsReadMode.png)   | [Link to read me](./tabbed-webparts/README.md) |
