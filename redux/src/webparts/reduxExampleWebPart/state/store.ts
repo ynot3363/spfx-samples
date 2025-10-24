@@ -1,9 +1,4 @@
-import {
-  configureStore,
-  Dispatch,
-  ThunkDispatch,
-  UnknownAction,
-} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import userReducer, { userListener, UserState } from "./features/userSlice";
 import webpartReducer, { WebPartState } from "./features/webpartSlice";
 
@@ -18,9 +13,6 @@ export type RootState = {
   user: UserState;
   webpart: WebPartState;
 };
-
-export type AppDispatch = ThunkDispatch<RootState, undefined, UnknownAction> &
-  Dispatch<UnknownAction>;
 
 // Function to create the actual store with preloaded state
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
